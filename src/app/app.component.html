@@ -1,12 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-10">
-      <h1>Header</h1>
+    <div class="col-xs-12">
       <ul>
-        <li class="text" *ngFor="let post of posts | async">
-          {{ post.author }}
+        <li *ngFor="let post of posts | async">
+          {{ post.title }}
+          {{ post.description }}
+          {{ post.date }}
         </li>
       </ul>
+      <hr>
+      <app-header></app-header>
+      <app-posts-list></app-posts-list>
     </div>
   </div>
 </div>

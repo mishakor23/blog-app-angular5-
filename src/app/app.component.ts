@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
+import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -11,10 +11,7 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent {
   posts: Observable<any[]>;
 
-  constructor(db: AngularFirestore) {
-      const settings = {timestampsInSnapshots: true};
-      db.app.firestore().settings(settings);
-
-      this.posts = db.collection('posts').valueChanges();
+  constructor(db: AngularFireDatabase) {
+      this.posts = db.list('posts').valueChanges();
   }
 }

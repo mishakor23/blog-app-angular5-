@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
   <div class="col-xs-12">
     <a href="#" class="list-group-item">
       <div class="row">
@@ -21,7 +21,7 @@
       </div>
     </a>
   </div>
-</div>
+</div> -->
 
 <div class="row">
   <div class="col-xs-12">
@@ -34,7 +34,7 @@
           <div class="text-center">
             <h4 class="list-group-item-heading">{{ post.title }}</h4>
             <p class="list-group-item-text">{{ post.description }}</p>
-            <p class="list-group-item-text">{{ post.date }}</p>
+            <p class="list-group-item-text">{{ post.date | date: 'fullDate' }}</p>
           </div>
         </div>
         <div class="col-xs-2">
@@ -45,6 +45,9 @@
         </div>
       </div>
     </a>
-    <app-comments></app-comments>
+    <app-comments [comments]="post.comments">
+      <app-comment *ngFor="let commentEl of comments" [comment]="commentEl"></app-comment>
+      <app-comments-form></app-comments-form>
+    </app-comments>
   </div>
 </div>

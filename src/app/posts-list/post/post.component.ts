@@ -8,6 +8,8 @@ import { Post } from './post.model';
 })
 export class PostComponent implements OnInit {
 
+@Input() comments;
+@Input() comment;
 @Input() post: Post;
 
   constructor() { }

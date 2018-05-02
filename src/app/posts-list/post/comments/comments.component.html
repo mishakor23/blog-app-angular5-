@@ -1,4 +1,9 @@
-<app-comment></app-comment>
+<div class="row">
+  <div class="col-xs-12">
+    <h2>Comments:</h2>
+  </div>
+</div>
+<app-comment *ngFor="let commentEl of post.comments" [comment]="commentEl"></app-comment>
 <div class="row">
   <div class="col-xs-8 col-xs-offset-2">
     <form>

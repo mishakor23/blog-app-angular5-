@@ -1,6 +1,31 @@
 <div class="row">
   <div class="col-xs-12">
-    <a href="#" class="list-group-item" *ngFor="let post of posts">
+    <a href="#" class="list-group-item">
+      <div class="row">
+        <div class="col-xs-1">
+          <span>#{{ post.id }}</span>
+        </div>
+        <div class="col-xs-9">
+          <div class="text-center">
+            <h4 class="list-group-item-heading">{{ post.title }}</h4>
+            <p class="list-group-item-text">{{ post.description }}</p>
+            <p class="list-group-item-text">{{ post.date | date: 'fullDate' }}</p>
+          </div>
+        </div>
+        <div class="col-xs-2">
+          <div class="btn-group-vertical">
+            <button type="button" class="pull-right btn btn-primary">Edit</button>
+            <button type="button" class="pull-right btn btn-danger">Delete</button>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-12">
+    <a href="#" class="list-group-item">
       <div class="row">
         <div class="col-xs-1">
           <span>#{{ post.id }}</span>
@@ -20,6 +45,6 @@
         </div>
       </div>
     </a>
-    <app-comments></app-comments>
+    <app-comments  *ngFor="lst commentEl of comments"></app-comments>
   </div>
 </div>

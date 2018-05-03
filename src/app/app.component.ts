@@ -14,4 +14,6 @@ export class AppComponent {
   constructor(db: AngularFireDatabase) {
       this.posts = db.list('posts').valueChanges();
   }
+
+
 }

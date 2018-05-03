@@ -10,6 +10,8 @@ import { PostComponent } from './posts-list/post/post.component';
 import { CommentComponent } from './posts-list/post/comment/comment.component';
 import { CommentsComponent } from './posts-list/post/comments/comments.component';
 import { CommentsFormComponent } from './posts-list/post/comments-form/comments-form.component';
+import { PostEditFormComponent } from './posts-list/post-edit-form/post-edit-form.component';
+import { FullPostComponent } from './full-post/full-post.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { CommentsFormComponent } from './posts-list/post/comments-form/comments-
     CommentComponent,
     CommentsComponent,
     CommentsFormComponent,
+    PostEditFormComponent,
+    FullPostComponent,
   ],
   imports: [
     BrowserModule,

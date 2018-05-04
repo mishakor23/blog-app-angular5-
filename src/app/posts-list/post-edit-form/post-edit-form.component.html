@@ -1,3 +1,22 @@
-<p>
-  post-edit-form works!
-</p>
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-xs-12">
+            <h2>Form:</h2>
+          </div>
+          <div class="col-xs-12">
+            <p><span>#{{ post.id }}</span></p>
+            <label for="title">Title</label>
+            <input type="text" id="title" class="form-control">
+            <label for="description">Description</label>
+            <textarea rows="5" id="description" class="form-control"></textarea>
+            <button type="button" class="btn btn-warning pull-right" id="btn-form-add">Edit</button>
+            <p class="list-group-item-text">{{ post.date | date: 'fullDate' }}</p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

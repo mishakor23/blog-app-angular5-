@@ -6,12 +6,22 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { HeaderComponent } from './header/header.component';
 import { PostsListComponent } from './posts-list/posts-list.component';
-import { PostComponent } from './posts-list/post/post.component';
-import { CommentComponent } from './posts-list/post/comment/comment.component';
-import { CommentsComponent } from './posts-list/post/comments/comments.component';
-import { CommentsFormComponent } from './posts-list/post/comments-form/comments-form.component';
+import { PostComponent } from './full-post/post/post.component';
+import { CommentComponent } from './full-post/comment/comment.component';
+import { CommentsComponent } from './full-post/comments/comments.component';
+import { CommentsFormComponent } from './full-post/comments-form/comments-form.component';
 import { PostEditFormComponent } from './posts-list/post-edit-form/post-edit-form.component';
 import { FullPostComponent } from './full-post/full-post.component';
+import { PostService } from './full-post/post/post.service';
+import { Routes, RouterModule } from '@angular/router';
+
+const appRoutes: Routes = [
+  // { path: '', component: HomeComponent },
+  { path: 'posts-list', component: PostsListComponent },
+  { path: 'post-edit-form', component: PostEditFormComponent },
+  { path: 'comment-edit-form', component: CommentsFormComponent },
+  { path: 'comment-edit-form', component: CommentsFormComponent },
+];
 
 @NgModule({
   declarations: [
@@ -28,9 +38,10 @@ import { FullPostComponent } from './full-post/full-post.component';
   imports: [
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 

@@ -1,3 +1,7 @@
-<p>
-  full-post works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <app-post *ngFor="let postElem of posts" [post]="postElem">
+      <app-comments></app-comments>
+    </app-post>
+  </div>
+</div>

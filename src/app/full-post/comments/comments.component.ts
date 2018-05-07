@@ -8,12 +8,11 @@ import { Post } from '../post/post.model';
 })
 export class CommentsComponent implements OnInit {
 
-@Input() comments;
+  @Input() comments;
 
   constructor() { }
 
   ngOnInit() {
-    console.log(this.comments)
   }
 
 }

@@ -11,4 +11,10 @@ export class PostService {
   getPost() {
     return this.posts;
   }
+
+  deletePost(element) {
+    // console.log(element)
+    const index = this.posts.indexOf(element);
+    this.posts.splice(index, 1);
+  }
 }

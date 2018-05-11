@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from './post.model';
 import { Router } from '@angular/router';
+import { PostService } from './post.service';
 
 @Component({
   selector: 'app-post',
@@ -11,7 +12,7 @@ export class PostComponent implements OnInit {
 
   @Input() post: Post;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private postService: PostService) { }
 
   ngOnInit() {
   }
@@ -19,4 +20,8 @@ export class PostComponent implements OnInit {
   onLoadPostEditForm() {
     this.router.navigate(['/post-edit-form']);
   }
+
+  // onDeletePost() {
+  //   this.postService.deletePost();
+  // }
 }

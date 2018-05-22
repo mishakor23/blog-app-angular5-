@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from './post.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { PostService } from './post.service';
 
 @Component({
@@ -9,19 +9,17 @@ import { PostService } from './post.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
+  post: Post;
+  id: number;
 
-  @Input() post: Post;
-
-  constructor(private router: Router, private postService: PostService) { }
+  constructor(private route: ActivatedRoute, private postService: PostService) { }
 
   ngOnInit() {
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.id = +params['id'];
+        this.post = this.postService.getPostId(this.id);
+      }
+    )
   }
-
-  onLoadPostEditForm() {
-    this.router.navigate(['/post-edit-form']);
-  }
-
-  // onDeletePost() {
-  //   this.postService.deletePost();
-  // }
 }

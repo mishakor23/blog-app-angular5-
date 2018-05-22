@@ -16,12 +16,12 @@
           <div class="btn-group-vertical">
             <a type="button"
                     class="pull-right btn btn-primary"
-                    [routerLink]="['post-edit-form', post.id]"
+                    routerLink="/post-edit-form/{{post.id}}"
             >Edit</a>
-            <button type="button"
+            <a type="button"
                     class="pull-right btn btn-danger"
                     (click)="onDeletePost()"
-            >Delete</button>
+            >Delete</a>
           </div>
         </div>
       </div>

@@ -16,21 +16,12 @@ import { PostService } from './full-post/post/post.service';
 import { Routes, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
-  { path: '', component: PostsListComponent },
-  { path: 'post-edit-form/:id', component: PostEditFormComponent },
-  { path: 'post-edit-form', component: PostEditFormComponent },
-  { path: 'comment-edit-form', component: CommentsFormComponent },
-  { path: 'full-post', component: FullPostComponent },
-];
-// const appRoutes: Routes = [
-//   { path: '', redirectTo: 'posts-list', pathMatch: 'full' },
-//   { path: 'posts-list', component: PostsListComponent },
-//   { path: 'posts-list/:id', component: FullPostComponent },
-//   { path: 'post-edit-form', component: PostEditFormComponent },
-//   { path: 'post-edit-form/:id', component: PostEditFormComponent },
-//   { path: 'comment-edit-form', component: CommentsFormComponent },
-//   { path: 'full-post', component: FullPostComponent }
-// ];
+     { path: '', redirectTo: '/posts-list', pathMatch: 'full' },
+     { path: 'posts-list', component: PostsListComponent },
+     { path: 'post-add-form', component: PostEditFormComponent },
+     { path: 'post-edit-form/:id', component: PostEditFormComponent },
+     { path: 'comment-edit-form', component: CommentsFormComponent },
+   ];
 
 @NgModule({
   declarations: [

@@ -12,9 +12,12 @@ export class PostService {
     return this.posts;
   }
 
-  deletePost(element) {
-    // console.log(element)
-    const index = this.posts.indexOf(element);
+  getPostId(index: number) {
+    return this.posts[index];
+  }
+
+  deletePost(post) {
+    const index = this.posts.indexOf(post);
     this.posts.splice(index, 1);
   }
 }

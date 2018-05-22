@@ -18,6 +18,7 @@ import { Routes, RouterModule } from '@angular/router';
 const appRoutes: Routes = [
      { path: '', redirectTo: '/posts-list', pathMatch: 'full' },
      { path: 'posts-list', component: PostsListComponent },
+     { path: 'post/:id', component: FullPostComponent },
      { path: 'post-add-form', component: PostEditFormComponent },
      { path: 'post-edit-form/:id', component: PostEditFormComponent },
      { path: 'comment-edit-form', component: CommentsFormComponent },

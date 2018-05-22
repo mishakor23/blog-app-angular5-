@@ -12,8 +12,8 @@ export class PostService {
     return this.posts;
   }
 
-  getPostId(index: number) {
-    return this.posts[index];
+  getPostId(id: number) {
+    return this.posts.find((post) => post.id === id);
   }
 
   deletePost(post) {
